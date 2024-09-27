@@ -34,7 +34,7 @@ This is the official github repository for "UniSumEval: Towards Unified, Fine-Gr
 
 # 📖 Data Description
 
-We provide samples in Unisumeval, which is available in [`data/unisumeval_faithfulness.json`](data/unisumeval_faithfulness.json) and [`data/unisumeval_keyfact.json`](data/unisumeval_keyfact.json). 
+We provide samples in Unisumeval, which is available in [`data/unisumeval_faithfulness.jsonl`](data/unisumeval_faithfulness.jsonl) and [`data/unisumeval_keyfact.jsonl`](data/unisumeval_keyfact.jsonl). 
 
 If you have any questions about our dataset, please contact us at ytaewon0415@kaist.ac.kr or kaist.disl.lab@gmail.com.
 
@@ -55,23 +55,23 @@ The metadata provides basic information about UniSumEval. All attributes are inc
 | model       | Summarizer name                            |
 | reference   | Reference summary in source dataset        |
 | summary     | Model summary (after JSON parsing)         |
-| sentences   | Summary split by sentence                  |
+| sentences   | Summary splited by sentence                |
 
 <br/> 
 
 ## Fact verification annotations
-[`data/unisumeval_faithfulness.json`](data/unisumeval_faithfulness.json) contain faithfulness evaluations by human annotators in mturk. The followings are descriptions about the attributes in JSON
+[`data/unisumeval_faithfulness.jsonl`](data/unisumeval_faithfulness.jsonl) contain faithfulness evaluations by human annotators in mturk. The followings are descriptions about the attributes in JSON
 
 | Field                                    | Description                                                               |
 |------------------------------------------|---------------------------------------------------------------------------|
 | fact_verification_label                  | Fact verification annotations about binary label (1 = hallu) |
 | fact_verification_error_type             | Fact verification annotations about error type      |
-| fact_verification_faithfulness_score     | Faithfulness score based on human annotation                               |
+| faithfulness_score     | Faithfulness score based on human annotation                               |
 
 <br/> 
 
 ## Key-fact validation annotations
-[`data/unisumeval_keyfact.json`](data/unisumeval_keyfact.json) contain key-facts validation results by human annotators in mturk. The followings are descriptions about the attributes in JSON
+[`data/unisumeval_keyfact.jsonl`](data/unisumeval_keyfact.jsonl) contain key-facts validation results by human annotators in mturk. The followings are descriptions about the attributes in JSON
 
 | Field                           | Description                                                      |
 |---------------------------------|------------------------------------------------------------------|
@@ -82,7 +82,7 @@ The metadata provides basic information about UniSumEval. All attributes are inc
 <br/> 
 
 ## Key-fact alignment annotations
-[`data/unisumeval_keyfact.json`](data/unisumeval_keyfact.json) contains completeness and conciseness evaluations by aligning summary sentences with key facts. The followings are descriptions about the attributes in JSON
+[`data/unisumeval_keyfact.jsonl`](data/unisumeval_keyfact.jsonl) contains completeness and conciseness evaluations by aligning summary sentences with key facts. The followings are descriptions about the attributes in JSON
 
 | Field                                         | Description                                                      |
 |-----------------------------------------------|------------------------------------------------------------------|
