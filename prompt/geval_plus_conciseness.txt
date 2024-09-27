@@ -1,0 +1,20 @@
+You will be given a article. You will then be given one summary written for this article. Your task is to rate the summary on one metric.
+
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+Conciseness (1-5) - the extent to which the summary presents information succinctly and without unnecessary elaboration. A concise summary effectively conveys the essential content of the source document using clear and concise language, avoiding redundant or superfluous information.
+
+Evaluation Steps:
+1. Read the article carefully and identify the main points, key information, and relevant details.
+2. Read the summary and compare it to the article. Check if the summary effectively conveys the essential content of the document in a concise manner, without unnecessary elaboration or redundancy.
+3. Assign a score from 1 to 5 for conciseness based on the Evaluation Criteria.
+
+Source Text:
+{input text}
+
+Summary:
+{summary}
+
+Evaluation Form (scores ONLY):
+- Conciseness:

@@ -1,0 +1,781 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+
+<section class="container">
+
+    <div class="row col-xs-12 col-md-12">
+    <!-- Instructions -->
+        <div class="col-md-6">
+            <section class="container" id="instruction" style="font-family: Verdana, Geneva, sans-serif; color: #333333">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><strong>Instructions</strong></div>
+            
+                    <div class="panel-body">
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+                          
+                            <strong style="font-size: 20px;"><u>INSTRUCTION</u></strong>
+
+                            <p>
+                                You will be provided with two different sets of statements. 
+                                <br>
+                                One is referred to as <strong>“Reference Statements”</strong>, and the other is referred to as <strong>“Target statements”</strong>. 
+                                Your job is to identify if each Reference Statement is relevant to the Target Statements. 
+                                Some Reference Statements may not be relevant to any of the provided Target Statements. 
+                                <br>
+                                <br>
+                                Please follow the <strong>STEPS</strong> below.
+                            </p>
+
+                            <br>
+
+                            <!-- Example -->
+                            <strong style="font-size: 20px;"><u>STEPS</u></strong>
+                            <ol>
+                                <li style="margin: 5px 0";>
+                                    Read the provided Reference Statement carefully (displayed on the left).
+                                </li>
+                                <li style="margin: 5px 0";> 
+                                    Verify if the Reference Statement is relevant to each of the Target Statements (displayed on the right). If yes, please select “Yes”, otherwise “No”.
+                                </li>
+                                <li style="margin: 5px 0";>
+                                    Once you complete examining the relevance of the Reference Statement with all of the Target Statements, then you have to repeat the same process with the next Reference Statement.
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <br>
+                       
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+                                
+                            <p><strong style="font-size: 20px;"><u>How to define relevance?</u></strong><p>
+                            <p>
+                                In this task, relevance is defined as <strong><u>the degree to which a Reference Statement pertain to, or logically connects to a Target Statement, either directly or through reasonable inference.</u></strong>
+                                <br>
+                                Relevance is confirmed when the Target Statement addresses the same issue or a closely related aspect highlighted in the Reference Statement. 
+                                <br>
+                                Below are examples illustrating when a Reference Statement is relevant to a Target Statement, especially in scenarios where relevance evaluation may be ambiguous. 
+                                <strong><u>Importantly, even if the statements contain contradictions in details, such as numbers or names, they are considered relevant to each other as long as they address directly connected issues</u></strong> (described in Example 4).
+                                <br>
+                                These examples are intended to address some of the cases where the relevance may not be immediately obvious or where the connection between statements involves inference or partial relevance. 
+                                Therefore, <strong><u>it is important to carefully review each example below </u></strong>to understand the nuances involved in determining the relationship between the statements.
+                            <p>
+                            
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 1: Direct Connection]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>Floods are becoming more frequent in coastal cities due to higher sea levels.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>Climate change is causing sea levels to rise, which threatens coastal communities.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>Yes: The Reference Statement is <strong>relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li><strong><u>The direct connection through the common theme</u></strong> of rising sea levels and their impact on coastal areas confirms the relevance, albeit from slightly different perspectives. The overlap here is clear: both statements are concerned with the effects of sea level rise on coastal areas. The Reference Statement presents a specific consequence—more frequent floods—while the Target Statement provides the broader context of climate change as the driving factor behind these sea level changes.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 2: Paraphrased Sentences]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>The government has implemented strict regulations on car emissions to combat air pollution.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>New policies require vehicles to reduce the pollutants they release into the atmosphere to help improve air quality.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>Yes: The Reference Statement is <strong>relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li>The relevance here is largely based on <strong><u>paraphrasing.</u></strong> Both statements address the same issue: regulatory actions targeting vehicle emissions to reduce air pollution. The Reference Statement specifically mentions "strict regulations on car emissions," while the Target Statement describes these regulations as "new policies" that mandate vehicles to "reduce the pollutants they release." The fundamental concept of regulatory intervention to lower emissions from vehicles directly connects the two statements.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 3: Partial Relevance]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>Walking daily can help lower blood sugar levels in people with diabetes.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>Regular exercise can significantly reduce the risk of chronic diseases such as heart disease, diabetes, and obesity. Studies have shown that engaging in a mix of aerobic and resistance training exercises decreases the incidence of these conditions in adults.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>Yes: The Reference Statement is <strong>relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li><strong><u>The partial overlap in context</u></strong> concerning diabetes and exercise creates a clear, albeit focused, relevance. While the Target Statement broadly discusses the benefits of regular exercise on several chronic diseases including diabetes, the Reference Statement narrows down to a specific type of exercise—walking—and its impact on just one aspect of diabetes management, namely blood sugar levels. This creates a direct, though partial, link as walking is a form of aerobic exercise, which is included under the general benefits of exercise routines mentioned in the Target Statement.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 4: Information Contradiction]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>Smartphone sales increased by 10% last year.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>Consumer electronics sales increased by 15% last month.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>Yes: The Reference Statement is <strong>relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li>Despite the differences in the growth percentages and the time frames referenced, the Reference Statement and the Target Statement are relevant to each other because they both <strong><u>address the same issue</u></strong> of electronics sales trends. In assessing relevance, discrepancies in details such as numerical values, names, or verbs within the statements are not considered crucial. The primary focus should be on whether the statements address a common theme or topic.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 5: No Explicit Connection]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>The sale of organic foods has soared in recent years.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>Healthy eating habits can significantly improve physical health.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>No: The Reference Statement is <strong>NOT relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li>There is <strong><u>no explicit connection</u></strong> made between the increase in organic food sales and the health benefits of eating habits described in the Target Statement. Despite both statements involving food, their focuses diverge significantly. The Reference Statement addresses a market trend regarding the popularity and sales of organic foods. The Target Statement, however, discusses the direct impact of healthy eating habits on physical health, emphasizing a health outcome.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <br>
+
+                            <strong style="font-size: 18px;">[Example 6: The Use of Excessive Inference]</strong>
+                            <ul>
+                                <li><strong>Reference Statement</strong>
+                                    <ul>
+                                        <li>Businesses are experiencing data breaches at a higher rate due to security vulnerabilities.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Target Statement</strong>
+                                    <ul>
+                                        <li>The adoption of cloud computing is transforming data management practices in businesses.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is the Reference Statement relevant to the Target Statement?</strong>
+                                    <ul>
+                                        <li>No: The Reference Statement is <strong>NOT relevant</strong> to the Target Statement.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Explanation</strong>
+                                    <ul>
+                                        <li>If <strong><u>excessive assumptions are required</u></strong> to link these statements directly, you should answer that the Reference Statement is not relevant to the Target Statement. The relevance is not established due to the lack of a direct connection between the two. Although both statements deal with data within businesses, the Target Statement does not directly address security risks or breaches as a consequence of adopting cloud computing. Therefore, linking these statements requires assumptions that are not supported by the information provided in the Target Statement.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+
+                            <p><strong style="font-size: 20px;"><u>NOTICE</u></strong><p>
+                                <ul>
+                                    <li style="margin: 5px 0";>There are various topics for the statements, including dialogues, news articles, medical articles, informative articles, meeting transcripts, and so on.</li>
+                                    <li style="margin: 5px 0";><strong>IMPORTANT:</strong> 
+                                        We have included some questions that can be used to evaluate the faithfulness of your work.
+                                        If you fail to get correct answers for those questions, it will result in the rejection of your submission.
+                                    </li>
+                                </ul>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                
+            </section>
+            
+        </div>  
+    </div>
+
+    <div class="row col-xs-12 col-md-12">
+    <!-- Instructions -->
+        <div class="col-md-6">
+            <section class="container" id="instruction" style="font-family: Verdana, Geneva, sans-serif; color: #333333">
+                <div class="panel panel-primary">
+                    <div class="panel-body" style = "border: 1px solid #ccc;">
+                        <p style = "font-size: 16px;"><strong>Progress Bar</strong></p>
+                        <div id="progressBarContainer" style="width: 95%; background-color: #ddd; margin: 0 auto;">
+                            <div id="progressBar" style="width: 0%; height: 20px; background-color: #2abaf7; position: relative;">
+                                <span id="progressPercentage" style="position: absolute; right: 10px; color: white;">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>    
+    </div>
+    
+
+    <div class="row col-xs-12 col-md-12">
+
+        <!-- End Instructions -->
+        <div class="col-md-6">
+        <!-- Content Body -->
+            <section class="container" id = "layout" style="margin-bottom: 15px; font-family: Verdana, Geneva, sans-serif; color: #333333; font-size: 1.0em;">
+        
+                <div class="container-head">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="col-6">
+                            <p style = "font-size: 20px"><strong>Reference Statement</strong></p>
+                        </div>
+                      
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p style = "font-size: 20px"><strong>Target Statements</strong></p>
+                    </div>
+                </div>
+                
+                <div class="container-body">
+                    <!-- Text Column -->
+                    <div class="col-xs-12 col-md-6">
+                      <div id="keyfact_container">
+                      </div>
+                    </div>
+        
+                    <!-- Fieldset Column -->
+                    <div class="col-xs-12 col-md-6">
+                        <!-- Group for key facts 1-8 -->
+                        <div id="sentence_container">
+                            <fieldset>
+                                <div class="checkbox" style="display: block;">
+                                    <input name="Dummy" type="checkbox" value="1"/>${model_name}
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="row col-xs-12 col-md-12" style="margin-top: 20px; font-family: Verdana, Geneva, sans-serif">
+                    <div class="col-md-12">
+                        <div id="incomplete-content" class="well text-left" style="overflow-x: auto; white-space: nowrap; background-color: #f1f1ef; font-size: 15px;">
+                            <div id="incompleteFieldsets">
+                                <!-- Incomplete fieldsets numbers will be shown here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <script type="text/javascript">
+                    var model_sentences = [
+                        "${model_summary_sentence_01}",
+                        "${model_summary_sentence_02}",
+                        "${model_summary_sentence_03}",
+                        "${model_summary_sentence_04}",
+                        "${model_summary_sentence_05}",
+                        "${model_summary_sentence_06}",
+                        "${model_summary_sentence_07}",
+                        "${model_summary_sentence_08}",
+                        "${model_summary_sentence_09}",
+                        "${model_summary_sentence_10}",
+                        "${model_summary_sentence_11}",
+                        "${model_summary_sentence_12}",
+                        "${model_summary_sentence_13}",
+                        "${model_summary_sentence_14}",
+                        "${model_summary_sentence_15}",
+                        "${model_summary_sentence_16}",
+                        "${model_summary_sentence_17}",
+                        "${model_summary_sentence_18}",
+                        "${model_summary_sentence_19}",
+                        "${model_summary_sentence_20}",
+                        "${model_summary_sentence_21}",
+                        "${model_summary_sentence_22}",
+                        "${model_summary_sentence_23}",
+                        "${model_summary_sentence_24}",
+                        "${model_summary_sentence_25}",
+                        "${model_summary_sentence_26}",
+                        "${model_summary_sentence_27}",
+                        "${model_summary_sentence_28}",
+                        "${model_summary_sentence_29}",
+                        "${model_summary_sentence_30}"
+                    ];
+                    
+                    var keyfacts = [
+                        "${keyfact_01}",
+                        "${keyfact_02}",
+                        "${keyfact_03}",
+                        "${keyfact_04}",
+                        "${keyfact_05}",
+                        "${keyfact_06}",
+                        "${keyfact_07}",
+                        "${keyfact_08}",
+                        "${keyfact_09}",
+                        "${keyfact_10}",
+                        "${keyfact_11}",
+                        "${keyfact_12}",
+                        "${keyfact_13}",
+                        "${keyfact_14}",
+                        "${keyfact_15}",
+                        "${keyfact_16}",
+                        "${keyfact_17}",
+                        "${keyfact_18}",
+                        "${keyfact_19}",
+                        "${keyfact_20}"
+                    ];
+                    
+                                
+                    function removeBlankElements(arr) {
+                        let removedIndices = [];
+                        let filteredArr = arr.filter((item, index) => {
+                            if (item === "BLANK" || item === "") {
+                                removedIndices.push(index); 
+                                return false;
+                            }
+                            return true;
+                        });
+                        return { filteredArr, removedIndices };
+                    }
+                    
+                    let resultModelSentences = removeBlankElements(model_sentences);
+
+                    model_sentences = resultModelSentences.filteredArr;
+
+                    let resultKeyFacts = removeBlankElements(keyfacts);
+
+                    keyfacts = resultKeyFacts.filteredArr;
+                    
+        
+                    var trick_keyfact = ["[trick_keyfact1]${trick_keyfact1}",
+                                          "[trick_keyfact2]${trick_keyfact2}",
+                                          "[trick_keyfact3]${trick_keyfact3}",
+                                          "[trick_keyfact4]${trick_keyfact4}"
+                                          ];
+
+                    trick_keyfact.forEach(function(trick, index) {
+                        var insert_position = Math.floor(Math.random() * (model_sentences.length -1)) + 1;
+                        keyfacts.splice(insert_position, 0, trick);
+                    });
+
+                    var keyfactArray = [];
+   
+                    function createKeyfactArray(keyfacts, keyfactArray) {
+                        var trick_number = 1;
+                        var trick_count = 0;
+
+                        var new_keyfacts = keyfacts.slice();
+
+                        for (var i = 0; i < new_keyfacts.length; i++) {
+
+                            var KeyfactName, trick_number;
+                    
+                            if (new_keyfacts[i].includes("trick_keyfact")) {
+                                var match = new_keyfacts[i].match(/\[trick_keyfact(\d+)\]/);
+                                if (match) {
+                                    trick_number = parseInt(match[1]);
+                                } else {
+                                    continue;
+                                }
+                    
+                                new_keyfacts[i] = new_keyfacts[i].replace(/\[trick_keyfact\d+\]/, "");
+
+                                KeyfactName= 'noise_keyfact_' + trick_number;
+
+                                trick_count++;
+                            } else {
+                                var KeyfactName= 'keyfact_' + (i + 1 - trick_count);
+                            }
+            
+                            var KeyfactText = new_keyfacts[i];
+                            var keyfactIndex = i;
+                            keyfactArray.push({
+                                KeyfactText: KeyfactText,
+                                KeyfactName: KeyfactName,
+                                keyfactIndex: keyfactIndex,
+                            });
+                        }
+                    }
+                    
+                    createKeyfactArray(keyfacts, keyfactArray);
+
+
+                    function createSentenceArray(sentences, KeyfactName) {
+                        
+                        var sentencesArray = [];
+                        
+                        var sentences = sentences.slice();
+                        for (var i = 0; i < sentences.length; i++) {
+                            var sentenceAnnotationTrue, sentenceAnnotationFalse, trick_number;
+                    
+                            sentenceAnnotationTrue = '<input name="' + KeyfactName + '_True" ' + 'type="checkbox" value="' + i + '"/><strong> Yes</strong>';
+                            sentenceAnnotationFalse = '<input name="' + KeyfactName + '_False" ' + 'type="checkbox" value="' + i + '"/><strong> No</strong>';
+                    
+                            var sentenceText = sentences[i];
+                            sentencesArray.push({
+                                sentenceText: sentenceText,
+                                sentenceAnnotationTrue: sentenceAnnotationTrue,
+                                sentenceAnnotationFalse: sentenceAnnotationFalse,
+                            });
+                        }
+
+                        return sentencesArray; 
+                    }
+
+                    var allSentencesArray = keyfactArray.map(keyfact => {
+                        return createSentenceArray(model_sentences, keyfact.KeyfactName);
+                    });
+
+                    console.log(allSentencesArray);
+                    console.log(keyfactArray);
+
+                    var resultHtml = '';
+
+                    var keyfact_resultHtml = '';
+                    var sentence_resultHtml = '';
+
+                    for (var i = 0; i < keyfactArray.length; i++) {
+                        var KeyfactText = keyfactArray[i].KeyfactText;
+                        var keyfactIndex = keyfactArray[i].keyfactIndex;
+                        var sentencesArray = allSentencesArray[keyfactIndex];
+
+                        keyfact_resultHtml += '<fieldset id="KeyfactField-' + keyfactIndex + '" class="keyfactItem">'
+                        keyfact_resultHtml += '<p style="font-size: 22px;"><strong>' + ' Reference Statement #' + (keyfactIndex + 1) + '</strong></p>';
+                        keyfact_resultHtml += '<div class="evaluation-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">';
+                        keyfact_resultHtml += "<p>" + KeyfactText + "</p>";
+                        keyfact_resultHtml += '</div><br>';
+
+                        // Add Previous and Next buttons within the fieldset
+                        keyfact_resultHtml += '<div style="text-align: center;">';
+                            if (i > 0) {
+                                keyfact_resultHtml += '<button type="button" onclick="goToPrevious(' + (keyfactIndex -1) + ')" class="button-style" style="margin-right: 10px;">Previous</button>';
+                            }
+                            if (i < keyfactArray.length - 1) {
+                                keyfact_resultHtml += '<button type="button" onclick="goToNext(' + (keyfactIndex + 1) + ')" class="button-style">Next</button>';
+                            }
+
+                        keyfact_resultHtml += '</fieldset>';
+
+                        sentence_resultHtml += '<fieldset id="survey-' + keyfactIndex + '" class="surveyItem">'
+
+                        sentence_resultHtml += "<p style='font-size: 18px;''><strong>Q. Is the Reference Statement relevant to each of the Target Statements? Please respond to all the questions by selecting either 'Yes' or 'No'.</strong></p><br><br>"
+
+                            for (var j = 0; j < sentencesArray.length; j++) {
+                                sentence_resultHtml += '<p style="font-size: 15px;"><strong>' + (j + 1) + '.Target Statement ' + (j + 1) + '</strong></p>';
+                                sentence_resultHtml += '<div class="evaluation-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">';
+                                sentence_resultHtml += '<p>' + sentencesArray[j].sentenceText + '</p>';
+                                sentence_resultHtml += '</div>';
+                                sentence_resultHtml += '<div id="SentenceField" style="display: flex;">'; 
+                                sentence_resultHtml += '<div style="flex: 1; text-align: left;">'; 
+                                sentence_resultHtml += '<p>' + sentencesArray[j].sentenceAnnotationTrue + '</p>'; 
+                                sentence_resultHtml += '</div>';
+                                sentence_resultHtml += '<div style="flex: 1; text-align: left;">'; 
+                                sentence_resultHtml += '<p>' + sentencesArray[j].sentenceAnnotationFalse + '</p>'; 
+                                sentence_resultHtml += '</div>';
+                                sentence_resultHtml += '</div>';
+                                sentence_resultHtml += '<br>';
+                            }
+
+
+                        sentence_resultHtml += '</fieldset>';
+
+                    }
+
+
+                    document.getElementById('keyfact_container').innerHTML = keyfact_resultHtml;
+                    document.getElementById('sentence_container').innerHTML = sentence_resultHtml;
+
+                     // Updated functions for Previous and Next buttons
+                     function goToPrevious(index) {
+                        hideAllFieldsets();
+
+                        var prevFieldsetSurvey = document.getElementById('survey-' + index);
+                        if (prevFieldsetSurvey) {
+                            prevFieldsetSurvey.style.display = 'block';
+                        }
+
+                        var prevFieldsetKeyfact = document.getElementById('KeyfactField-' + index);
+                        if (prevFieldsetKeyfact) {
+                            prevFieldsetKeyfact.style.display = 'block';
+                        }
+                    }
+                    // Function to go to the next fieldset
+                    function goToNext(index) {
+                        hideAllFieldsets();
+                        var nextSurveyFieldset = document.getElementById('survey-' + index);
+                        var nextKeyfactFieldset = document.getElementById('KeyfactField-' + index);
+                        if (nextSurveyFieldset) {
+                            nextSurveyFieldset.style.display = 'block';
+                        }
+                        if (nextKeyfactFieldset) {
+                            nextKeyfactFieldset.style.display = 'block';
+                        }
+                    }
+
+                    // Function to hide all fieldsets
+                    function hideAllFieldsets() {
+                        var surveyFieldsets = document.getElementsByClassName('surveyItem');
+                        var keyfactFieldsets = document.getElementsByClassName('keyfactItem');
+                        for (var i = 0; i < surveyFieldsets.length; i++) {
+                            surveyFieldsets[i].style.display = 'none';
+                        }
+                        for (var j = 0; j < keyfactFieldsets.length; j++) {
+                            keyfactFieldsets[j].style.display = 'none';
+                        }
+                    }
+
+                    // Initialization function to hide all fieldsets and show the first one
+                    function initializeFieldsets() {
+                        hideAllFieldsets();
+                        // Assuming sentencesArray is defined elsewhere in your code
+                        if (sentencesArray.length > 0) {
+                            document.getElementById('survey-0').style.display = 'block';
+                            document.getElementById('KeyfactField-0').style.display = 'block';
+                        }
+                    }
+                    
+                    // Call initializeFieldsets when the page loads
+                    document.addEventListener('DOMContentLoaded', initializeFieldsets);
+
+                    var completionStatus = {};
+
+                    function updateCompletionStatus() {
+                        for (var i = 0; i < keyfactArray.length; i++) {
+                            var keyfactIndex = keyfactArray[i].keyfactIndex;
+                            var KeyfactName = 'keyfact_' + keyfactIndex;
+                            
+                            completionStatus[KeyfactName] = false; 
+
+                            var sentencesArray = allSentencesArray[keyfactIndex];
+
+                            if (sentencesArray.length > 0) {
+                                var allCheckedCount = 0;
+                                var fieldset = document.getElementById('survey-' + keyfactIndex);
+                                var sentenceFields = fieldset.querySelectorAll('#SentenceField');
+                                var allFieldsOneChecked = true; 
+
+                                sentenceFields.forEach(function(sentenceField) {
+                                    var checkboxes = sentenceField.querySelectorAll('[type="checkbox"]');
+                                    var checkedCount = 0;
+
+                                    checkboxes.forEach(function(checkbox) {
+                                        if (checkbox.checked) {
+                                            allCheckedCount++;
+                                            checkedCount++;
+                                        }
+                                    });
+
+                                    if (checkedCount !== 1) {
+                                        allFieldsOneChecked = false;
+                                    }
+                                });
+                                completionStatus[KeyfactName] = allFieldsOneChecked && (allCheckedCount === sentencesArray.length);
+                            }
+
+                            console.log(KeyfactName + ': ' + completionStatus[KeyfactName]);
+                        }
+                    }
+ 
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var fieldsets = document.querySelectorAll('fieldset.keyfactItem');
+                        var submitButton = document.getElementById('submitButton');
+                        var incompleteDiv = document.getElementById('incompleteFieldsets');
+                        var progressBar = document.getElementById('progressBar');
+                    
+                        function updateProgress(incompleteCount) {
+                            var totalFieldsets = fieldsets.length;
+                            var completeCount = totalFieldsets - incompleteCount;
+                            var progressPercentage = (completeCount / totalFieldsets) * 100;
+                            progressBar.style.width = progressPercentage + '%';
+
+                            var progressPercentageText = document.getElementById('progressPercentage');
+                            progressPercentageText.textContent = progressPercentage.toFixed(0) + '%';
+                        }
+                    
+                        function updateIncompleteFieldsets() {
+                            var incompleteFieldsetsNumbers = [];
+                            console.log(incompleteFieldsetsNumbers);
+                            
+                            for (var i = 0; i < keyfactArray.length; i++) {
+                                var keyfactIndex = keyfactArray[i].keyfactIndex;
+                                var KeyfactName = 'keyfact_' + keyfactIndex;
+                                console.log(completionStatus[KeyfactName]);
+                                if (!completionStatus[KeyfactName]) {
+                                    incompleteFieldsetsNumbers.push(keyfactIndex + 1);
+                                }
+                            }
+
+                            if (incompleteFieldsetsNumbers.length > 0) {
+                                incompleteDiv.innerHTML = '<strong><div class="incomplete-style">Incomplete Reference Statement</div> ' + incompleteFieldsetsNumbers.join(', ') + '</strong>';
+                                submitButton.disabled = true;
+                            } else {
+                                incompleteDiv.innerHTML = '<strong><div class="incomplete-style">All Completed</div>';
+                                submitButton.disabled = false;
+                            }
+                    
+                            updateProgress(incompleteFieldsetsNumbers.length);
+                        }
+                    
+                        var allCheckboxes = document.querySelectorAll('[type="checkbox"]');
+                        allCheckboxes.forEach(function(checkbox) {
+                            checkbox.addEventListener('change', function() {
+                                updateCompletionStatus();  
+                                updateIncompleteFieldsets();  
+                            });
+                        });
+
+                        updateIncompleteFieldsets(); 
+                    });
+                    
+                
+                </script>
+
+            </section>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+<style type="text/css">
+    #instructions {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    
+    .panel-body p, .panel-body li {
+        line-height: 1.6; /* Adjust this value as needed */
+    }
+    
+    #sentence_container {
+        height: 100%;
+        max-height: 500px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    #keyfact_container {
+        height: 100%;
+        max-height: 500px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    
+    .surveyItem p {
+        margin: 5px 0; 
+    }
+
+    .checkbox p {
+        margin: 5px 0; 
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .input-margin {
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+    
+    .incomplete-style {
+    font-size: 15px; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f59d48;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#f8b95d), to(#f59e49));
+    background-image: -moz-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -ms-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8b95d), color-stop(100%, #f59e49));
+    background-image: -webkit-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -o-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: linear-gradient(to bottom, #f8b95d, #f59e49);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8b95d', endColorstr='#f59e49', GradientType=0);
+    border-color: #f59d48;
+    border-color: rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.25);
+    text-align: center;
+    }
+    
+    .button-style {
+    width: 100px;
+    font-size: 15px; 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f59d48;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#f8b95d), to(#f59e49));
+    background-image: -moz-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -ms-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8b95d), color-stop(100%, #f59e49));
+    background-image: -webkit-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -o-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: linear-gradient(to bottom, #f8b95d, #f59e49);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8b95d', endColorstr='#f59e49', GradientType=0);
+    border-color: #f59d48;
+    border-color: rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.25);
+    text-align: center;
+    }
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: #2abaf7;
+    transition: width 0.4s ease-in-out;
+}
+
+</style>

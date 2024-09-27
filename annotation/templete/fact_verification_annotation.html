@@ -1,0 +1,866 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+
+<section class="container">
+
+    <div class="row col-xs-12 col-md-12">
+    <!-- Instructions -->
+        <div class="col-md-6">
+            <section class="container" id="instruction" style="font-family: Verdana, Geneva, sans-serif; color: #333333">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><strong>Instructions</strong></div>
+            
+                    <div class="panel-body">
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+                            <strong style="font-size: 20px;"><u>Main Objective</u></strong>
+                            <p><span style="background-color: yellow;"><strong>Your main job is to review AI’s fact-checking statements on summarized sentences.</strong></span> 
+                            The AI assesses whether the summarized sentences accurately reflect the information of their original article.
+                            If the information in the summarized sentences is not correct, the AI also provides what kind of error is present in the summarized sentences.</p>
+                            
+                            <br>
+                            <strong style="font-size: 20px;"><u>INSTRUCTION</u></strong>
+                            <p style="margin: 5px 0;">For every question, you will be provided with the following three components:</p>
+                            <ul>
+                                <li style="margin: 5px 0";> <strong>A Reference Article:</strong> This article is an original source from which Summary Sentences are generated. It is identified by the name format "Reference Article".</li>
+                                <li style="margin: 5px 0";> <strong>A Summary Sentence:</strong> A brief summary generated based on the Reference Article.</li> 
+                                <li style="margin: 5px 0";>
+                                    <strong><um>AI’s Fact-Checking Statement:</um></strong> Based on the Reference Article, this AI-generated statement assesses whether the information in the Summary Sentence is correct.
+                                    It also points out a specific type of error present in the Summary Sentence.
+                                </li>
+                            </ul>
+                            <br>
+                        
+                                    
+                            <!-- Example -->
+                            <strong style="font-size: 20px;"><u>STEPS</u></strong>
+                            <ol>
+                                <li style="margin: 5px 0";><strong>Examine the Reference Article and the Summary Sentence:</strong> Carefully read both documents. The Reference Article is displayed on the left, and the Summary Sentence is on the right.</li>
+                                <br>
+                                <li style="margin: 5px 0";> 
+                                    <strong>Evaluate the AI's Fact-Checking Statement:</strong> 
+                                    Review the AI's judgment on the correctness of the information in the Summary Sentence and its reason for any identified errors. 
+                                    <span style="background-color: yellow;"><strong>Your evaluation should focus on the accuracy of the AI’s judgment regarding a Summary Sentence, NOT on the correctness of the Summary Sentence itself.</strong></span>
+                                    Therefore, there are four possible scenarios for your answer. 
+                                        <ol style="list-style-type: none;">
+                                            <li>1) If you think a Summary Sentence is INCORRECT, and the AI’s judgment is that the Summary Sentence is also INCORRECT (including its reason for any identified errors), then you should answer that the AI’s judgment is “accurate”.</li>
+                                            <li>2) If you think a Summary Sentence is INCORRECT, but the AI’s judgment is that the Summary Sentence is CORRECT,  then you should answer that the AI’s judgment is “inaccurate”.</li>
+                                            <li>3) If you think a Summary Sentence is CORRECT, and the AI’s judgment is that the Summary Sentence is also CORRECT,  then you should answer that the AI’s judgment is “accurate”.</li>
+                                            <li>4) If you think a Summary Sentence is CORRECT, but the AI’s judgment is that the Summary Sentence is INCORRECT (including its reason for any identified errors),  then you should answer that the AI’s judgment is “inaccurate”.</li>
+                                        </ol>
+                                </li> 
+                                <br>
+                                <li style="margin: 5px 0";>
+                                    <strong>Offer Your Assessment:</strong> If you believe the AI's Fact-Checking Statement is INCORRECT, provide your own answer regarding the factual correctness of the Summary Sentence. 
+                                    If it contains any incorrect information, specify the error type detected in the Summary Sentence.
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <br>
+                       
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+                                
+                            <p><strong style="font-size: 20px;"><u>What is an error?</u></strong><p>
+                            <p>Below, we give you detailed examples of different types of errors which can be present in a Summary Sentence.<p>
+                            <p><strong style="font-size: 16px;">[Reference Article (Example)]</strong></p>
+                                <div class="example-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding : 10px">
+                                    In the heart of the bustling city, nestled inside a park, stands the historic Jefferson Library.
+                                    Built in 1910, this architectural marvel houses a vast collection of rare books, manuscripts, and artifacts, attracting scholars and history enthusiasts from around the world.
+                                    Its grand facade and ornate interiors make it a beloved landmark, reflecting the city's rich cultural heritage and commitment to education.
+                                </div>
+                            <br>
+                            <p><strong style="font-size: 16px;">[Error Types]</strong></p>
+                            <ul>
+                                <li style="margin: 5px 0;">
+                                    <strong style="font-size: 15px;">Information not in the Reference Article</strong><br>: This occurs when a Summary Sentence contains facts that cannot be confirmed by the Reference Article. Sometimes, a Summary Sentence introduces a completely new fact that is not relevant to the Reference Article, making it impossible to verify. In such cases, the Summary Sentence neither aligns with nor contradicts the information in the Reference Article. These errors can also include statements expressing subjective opinions, beliefs, or biases that cannot be confirmed by the Reference Article.<br>
+                                    <p></p>
+                                    <ul>
+                                        <li>[Example 1] The Jefferson Library was <span style="background-color: #fdebec; font-weight: bold;">the first library to offer online book lending services.</span></li>
+                                        <li>[Explanation 1] This statement introduces new information that cannot be verified within the Reference Article.</li>
+                                        <li>[Example 2] The Jefferson Library <span style="background-color: #fdebec; font-weight: bold;">is considered the most beautiful building in the city.</span></li>
+                                        <li>[Explanation 2] This statement expresses a subjective opinion about the library's aesthetics, which cannot be confirmed by the Reference Article.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li style="margin: 5px 0;">
+                                    <strong style="font-size: 15px;">Entity error</strong><br>: This occurs when an entity (typically a main subject or object) in a Summary Sentence is incorrect. Errors may include a wrong number, abbreviation, pronoun, etc.  It can also occur at a phrase-level. Modifying the wrong entity can directly make the entire Summary Sentence factually correct.
+                                    <p></p>
+                                    <ul>
+                                        <li>[Example 1] The Jefferson <span style="background-color: #fdebec; font-weight: bold;">School</span> houses a vast collection of rare books.</li>
+                                        <li>[Explanation 1] This error replaces "Library" with "School," misrepresenting the main subject of the Summary Sentence.</li>
+                                        <li>[Example 2] The Jefferson Library was constructed in <span style="background-color: #fdebec; font-weight: bold;">1920.</span></li>
+                                        <li>[Explanation 2] This error misrepresents the main subject (construction date) of the Summary Sentence.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li style="margin: 5px 0;">
+                                    <strong style="font-size: 15px;">Relation error</strong><br>: This error arises from incorrect semantic relationships (e.g., verbs, prepositions, adjectives) within a Summary Sentence, which can also include errors at the phrase level. This error can be fixed by editing the erroneous phrases.
+                                    <p></p>
+                                    <ul>
+                                        <li>[Example 1] The Jefferson Library is located <span style="background-color: #fdebec; font-weight: bold;">beside</span> a park.</li>
+                                        <li>[Explanation 1] This error incorrectly describes the library's position in relation to the city's park, as it is nestled inside a park, not beside it.</li>
+                                        <li>[Example 2] The Jefferson Library <span style="background-color: #fdebec; font-weight: bold;">is affected by</span> scholars and history enthusiasts from around the world.</li>
+                                        <li>[Explanation 2] In the Reference Article, the library is described as "affecting", not “affected by” scholars and history enthusiasts, indicating an active role of the library in drawing visitors.</li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li style="margin: 5px 0;">
+                                    <strong style="font-size: 15px;">Sentence error</strong><br>: This occurs when a full Summary Sentence entirely contradicts with the Reference Article. Unlike entity or relation errors, sentence errors typically require significant revision or the removal of the entire Summary Sentence.
+                                    <p></p>
+                                    <ul>
+                                        <li>[Example 1] The Jefferson Library is <span style="background-color: #fdebec; font-weight: bold;">a modern structure with minimalist architecture.</span></li>
+                                        <li>[Explanation 1] It directly contradicts the Reference Article, which describes the library as a historic architectural marvel, not a modern structure with minimalist architecture.</li>
+                                        <li>[Example 2] The Jefferson Library's collection <span style="background-color: #fdebec; font-weight: bold;">primarily consists of digital resources accessible online.</span></li>
+                                        <li>[Explanation 2] It contradicts the Reference Article, which highlights the library's vast collection of rare books, manuscripts, and artifacts housed within its physical premises, rather than primarily consisting of digital resources.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+
+                            <p><strong style="font-size: 20px;"><u>NOTICE</u></strong><p>
+                                <ul>
+                                    <li style="margin: 5px 0";>There are various text types, including dialogues, news articles, medical articles, informative articles, meeting transcripts, and so on.</li>
+                                    <li style="margin: 5px 0";><strong>IMPORTANT:</strong>
+                                        <ul>
+                                            <li><strong>We have included some Summary Sentences that can be used to evaluate the faithfulness of your work.</strong> If you fail to get correct answers for those Summary Sentences, it will result in the rejection of your submission. Please be aware that submitting answers without genuinely completing a task will be easily identified.</li>
+                                            <li><span style="background-color: yellow;"><strong>Your evaluation should focus on the accuracy of the AI’s judgment regarding a Summary Sentence, NOT on the correctness of the Summary Sentence itself.</strong></span> Therefore, for example, if you think a Summary Sentence is INCORRECT and the AI’s judgment is that the Summary Sentence is also INCORRECT (including its reason for any identified errors), then you should answer that the AI’s judgment is “accurate”.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                
+            </section>
+            
+        </div>  
+    </div>
+
+    <div class="row col-xs-12 col-md-12">
+    <!-- Instructions -->
+        <div class="col-md-6">
+            <section class="container" id="instruction" style="font-family: Verdana, Geneva, sans-serif; color: #333333">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><strong>Task description: Find errors</strong></div>
+                    <div class="example-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding : 10px"><strong>
+
+                            <span style="background-color: yellow;">To help you, we have underlined the sentences in the Reference Article that are likely to contain relevant information.</span><br> 
+                            However, this is for guidance only; you should not restrict yourself to the underlined sentences when answer the questions. <br>
+                            The entire summary article, which consists of multiple Summary Sentences, is also provided to help you gain better contextual information.<br>
+                            Within the entire summary article, the Summary Sentence to be verified is <span style="background-color: yellow;text-decoration: underline;">highlighted</span>. You should <span style="background-color: yellow;text-decoration: underline;"> only evaluate the single highlighted</span> Summary Sentence.
+                    </strong></div>
+                    <div class="panel-body" style = "border: 1px solid #ccc;">
+                        <p style = "font-size: 16px;"><strong>Progress Bar</strong></p>
+                        <div id="progressBarContainer" style="width: 95%; background-color: #ddd; margin: 0 auto;">
+                            <div id="progressBar" style="width: 0%; height: 20px; background-color: #2abaf7; position: relative;">
+                                <span id="progressPercentage" style="position: absolute; right: 10px; color: white;">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>    
+    </div>
+    
+
+    <div class="row col-xs-12 col-md-12">
+
+        <!-- End Instructions -->
+        <div class="col-md-6">
+        <!-- Content Body -->
+            <section class="container" id = "layout" style="margin-bottom: 15px; font-family: Verdana, Geneva, sans-serif; color: #333333; font-size: 1.0em;">
+        
+                <div class="container-head">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="col-6">
+                            <p style = "font-size: 20px"><strong>Reference Article</strong></p>
+                        </div>
+                      
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p style = "font-size: 20px"><strong>Summary sentences</strong></p>
+                    </div>
+                </div>
+                
+                <div class="container-body">
+                    <!-- Text Column -->
+                    <div class="col-xs-12 col-md-6">
+                      <div id="document-content">
+                        <p id="input_context">${document}</p>
+                      </div>
+                    </div>
+        
+                    <!-- Fieldset Column -->
+                    <div class="col-xs-12 col-md-6">
+                        <div id="sentence_container">
+                            <fieldset>
+                                <div class="checkbox" style="display: block;">
+                                    <input name="Dummy" type="checkbox" value="1"/>${model_name}
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    <div class="row col-xs-12 col-md-12" style="margin-top: 20px; font-family: Verdana, Geneva, sans-serif">
+        <div class="col-md-12">
+            <div id="incomplete-content" class="well text-left" style="overflow-x: auto; white-space: nowrap; background-color: #f1f1ef; font-size: 15px;">
+                <div id="incompleteFieldsets">
+                    <!-- Incomplete fieldsets numbers will be shown here -->
+                </div>
+            </div>
+        </div>
+    </div>
+            
+                <script type="text/javascript">
+                    var model_sentence = [
+                        "${model_summary_sentence_01}",
+                        "${model_summary_sentence_02}",
+                        "${model_summary_sentence_03}",
+                        "${model_summary_sentence_04}",
+                        "${model_summary_sentence_05}",
+                        "${model_summary_sentence_06}",
+                        "${model_summary_sentence_07}",
+                        "${model_summary_sentence_08}",
+                        "${model_summary_sentence_09}",
+                        "${model_summary_sentence_10}",
+                        "${model_summary_sentence_11}",
+                        "${model_summary_sentence_12}",
+                        "${model_summary_sentence_13}",
+                        "${model_summary_sentence_14}",
+                        "${model_summary_sentence_15}",
+                        "${model_summary_sentence_16}",
+                        "${model_summary_sentence_17}",
+                        "${model_summary_sentence_18}",
+                        "${model_summary_sentence_19}",
+                        "${model_summary_sentence_20}",
+                        "${model_summary_sentence_21}",
+                        "${model_summary_sentence_22}",
+                        "${model_summary_sentence_23}",
+                        "${model_summary_sentence_24}",
+                        "${model_summary_sentence_25}",
+                        "${model_summary_sentence_26}",
+                        "${model_summary_sentence_27}",
+                        "${model_summary_sentence_28}",
+                        "${model_summary_sentence_29}",
+                        "${model_summary_sentence_30}",
+                    ];
+                    
+                    var model_hint_list = [
+                                "${model_summary_sentence_01_hint}",
+                                "${model_summary_sentence_02_hint}",
+                                "${model_summary_sentence_03_hint}",
+                                "${model_summary_sentence_04_hint}",
+                                "${model_summary_sentence_05_hint}",
+                                "${model_summary_sentence_06_hint}",
+                                "${model_summary_sentence_07_hint}",
+                                "${model_summary_sentence_08_hint}",
+                                "${model_summary_sentence_09_hint}",
+                                "${model_summary_sentence_10_hint}",
+                                "${model_summary_sentence_11_hint}",
+                                "${model_summary_sentence_12_hint}",
+                                "${model_summary_sentence_13_hint}",
+                                "${model_summary_sentence_14_hint}",
+                                "${model_summary_sentence_15_hint}",
+                                "${model_summary_sentence_16_hint}",
+                                "${model_summary_sentence_17_hint}",
+                                "${model_summary_sentence_18_hint}",
+                                "${model_summary_sentence_19_hint}",
+                                "${model_summary_sentence_20_hint}",
+                                "${model_summary_sentence_21_hint}",
+                                "${model_summary_sentence_22_hint}",
+                                "${model_summary_sentence_23_hint}",
+                                "${model_summary_sentence_24_hint}",
+                                "${model_summary_sentence_25_hint}",
+                                "${model_summary_sentence_26_hint}",
+                                "${model_summary_sentence_27_hint}",
+                                "${model_summary_sentence_28_hint}",
+                                "${model_summary_sentence_29_hint}",
+                                "${model_summary_sentence_30_hint}",
+                                ];
+                                
+                    var model_evaluation = [
+                                "${model_summary_sentence_01_evaluation}",
+                                "${model_summary_sentence_02_evaluation}",
+                                "${model_summary_sentence_03_evaluation}",
+                                "${model_summary_sentence_04_evaluation}",
+                                "${model_summary_sentence_05_evaluation}",
+                                "${model_summary_sentence_06_evaluation}",
+                                "${model_summary_sentence_07_evaluation}",
+                                "${model_summary_sentence_08_evaluation}",
+                                "${model_summary_sentence_09_evaluation}",
+                                "${model_summary_sentence_10_evaluation}",
+                                "${model_summary_sentence_11_evaluation}",
+                                "${model_summary_sentence_12_evaluation}",
+                                "${model_summary_sentence_13_evaluation}",
+                                "${model_summary_sentence_14_evaluation}",
+                                "${model_summary_sentence_15_evaluation}",
+                                "${model_summary_sentence_16_evaluation}",
+                                "${model_summary_sentence_17_evaluation}",
+                                "${model_summary_sentence_18_evaluation}",
+                                "${model_summary_sentence_19_evaluation}",
+                                "${model_summary_sentence_20_evaluation}",
+                                "${model_summary_sentence_21_evaluation}",
+                                "${model_summary_sentence_22_evaluation}",
+                                "${model_summary_sentence_23_evaluation}",
+                                "${model_summary_sentence_24_evaluation}",
+                                "${model_summary_sentence_25_evaluation}",
+                                "${model_summary_sentence_26_evaluation}",
+                                "${model_summary_sentence_27_evaluation}",
+                                "${model_summary_sentence_28_evaluation}",
+                                "${model_summary_sentence_29_evaluation}",
+                                "${model_summary_sentence_30_evaluation}",
+                                ];
+                    
+                    var model_hint = model_hint_list.map(JSON.parse);
+                
+                    var ModelArray = [model_sentence];
+                    var ModelArrayNames = ["model_sentence"]
+                    var HintArray = [model_hint];
+                    var EvaluatinArray = [model_evaluation];
+    
+                    function removeBlankElements(arr) {
+                        let removedIndices = [];
+                        let filteredArr = arr.filter((item, index) => {
+                            if (item === "BLANK" || item === "") {
+                                removedIndices.push(index); 
+                                return false;
+                            }
+                            return true;
+                        });
+                        return { filteredArr, removedIndices };
+                    }
+                    
+                    for (var i = 0; i < ModelArray.length; i++) {
+                        let { filteredArr, removedIndices } = removeBlankElements(ModelArray[i]);
+                        ModelArray[i] = filteredArr;
+                        if (HintArray[i]) {
+                            HintArray[i] = HintArray[i].filter((_, index) => !removedIndices.includes(index));
+                        };
+
+                        if (EvaluatinArray[i]) {
+                            EvaluatinArray[i] = EvaluatinArray[i].filter((_, index) => !removedIndices.includes(index));
+                        };
+                    }
+                    
+                    var arraysToProcess = [];
+                    var hintsToProcess = [];
+                    var evaluationsToProcess = [];
+                    
+                    ModelArray.forEach((array, index) => {
+                        if (array.length > 0) {
+                            arraysToProcess.push(array);
+                            hintsToProcess.push(HintArray[index]);
+                            evaluationsToProcess.push(EvaluatinArray[index]);
+                        }
+                    });
+                    
+                    var noise_sentence = ["[noise_sentence1]${noise_sentence1}",
+                                          "[noise_sentence2]${noise_sentence2}",
+                                          "[noise_sentence3]${noise_sentence3}",
+                                          "[noise_sentence4]${noise_sentence4}"
+                                          ];
+                    
+                    var noise_evaluation = ["${noise_sentence1_evaluation}",
+                                            "${noise_sentence2_evaluation}",
+                                            "${noise_sentence3_evaluation}",
+                                            "${noise_sentence4_evaluation}"];
+                    
+                    var noise_highlight = ["${noise_sentence1_hint}",
+                                           "${noise_sentence2_hint}",
+                                           "${noise_sentence3_hint}",
+                                           "${noise_sentence4_hint}"].map(JSON.parse);
+                    
+                    noise_sentence.forEach(function(noise, index) {
+                        var randomModelIndex = Math.floor(Math.random() * arraysToProcess.length);
+                        var selectedModel = arraysToProcess[randomModelIndex];
+                        var selectedModel_hint = hintsToProcess[randomModelIndex];
+                        var selectedModel_evaluation = evaluationsToProcess[randomModelIndex];
+                        var insert_position = Math.floor(Math.random() * (selectedModel.length -1)) + 1;
+                        selectedModel.splice(insert_position, 0, noise);
+
+                        if (noise_highlight[index]) {
+                            selectedModel_hint.splice(insert_position, 0, noise_highlight[index]);
+                        };
+                        if (noise_evaluation[index]) {
+                            selectedModel_evaluation.splice(insert_position, 0, noise_evaluation[index]);
+                        };
+                    });
+
+                    var highlight_list = HintArray[0]
+                    
+                    // createSentenceArray & Random 
+                    var sentencesArray = [];
+                    var Noise_number = 1;
+                
+                    function createSentenceArray(sentences, arrayName, summarizerName, evaluation_array) {
+                        var Noise_count = 0;
+                        for (var i = 0; i < sentences.length; i++) {
+                            var sentenceErrorType, sentenceAssessment, sentenceAI, Noise_number;
+                    
+                            if (sentences[i].includes("noise_sentence")) {
+                                var match = sentences[i].match(/\[noise_sentence(\d+)\]/);
+                                if (match) {
+                                    Noise_number = parseInt(match[1]);
+                                } else {
+                                    continue;
+                                }
+                    
+                                sentences[i] = sentences[i].replace(/\[noise_sentence\d+\]/, "");
+                                sentenceErrorType = '<input name="' + "noise_sentence" + '_' + Noise_number + '_error_type" ';
+                                sentenceAI = '<input name="' + "noise_sentence" + '_' + Noise_number + '_AI_agree" ';
+                                sentenceAssessment = '<input name="' + "noise_sentence" + '_' + Noise_number + '_annotator_assessment" ';
+                                Noise_count++;
+                            } else {
+                                sentenceErrorType = '<input name="' + arrayName + '_' + (i + 1 - Noise_count) + '_error_type" ';
+                                sentenceAI = '<input name="' + arrayName + '_' + (i + 1 - Noise_count) + '_AI_agree" ';
+                                sentenceAssessment = '<input name="' + arrayName + '_' + (i + 1 - Noise_count) + '_annotator_assessment" ';
+                            }
+                    
+                            var sentenceText = sentences[i];
+                            var evaluationText = evaluation_array[i];
+                            var sentenceIndex = i + 1;
+                            sentencesArray.push({
+                                sentenceErrorType: sentenceErrorType,
+                                sentenceText: sentenceText,
+                                sentenceAI: sentenceAI,
+                                sentenceAssessment : sentenceAssessment,
+                                summarizerName: summarizerName,
+                                sentenceIndex: sentenceIndex,
+                                evaluationText : evaluationText
+                            });
+                        }
+                    }
+                    
+                    function getRandomSummarizer(availableSummarizers) {
+                        var index = Math.floor(Math.random() * availableSummarizers.length);
+                        return availableSummarizers.splice(index, 1)[0];
+                    }
+                
+                    var availableSummarizers = Array.from({ length: arraysToProcess.length }, (_, i) => i + 1);
+                    var summarizerAssignments = [];
+                    
+                    arraysToProcess.forEach((array, index) => {
+                        var summarizerNumber = getRandomSummarizer(availableSummarizers);
+                        var arrayName = ModelArrayNames[index]; 
+                        var evaluation_array = evaluationsToProcess[index]
+                        summarizerAssignments.push({ array: array, name: arrayName, summarizer: 'Summarizer ' + summarizerNumber, evaluation_array: evaluation_array });
+                    });
+                    
+                    summarizerAssignments.sort((a, b) => parseInt(a.summarizer.split(' ')[1]) - parseInt(b.summarizer.split(' ')[1]));
+                    
+                    summarizerAssignments.forEach(assignment => {
+                        createSentenceArray(assignment.array, assignment.name, assignment.summarizer, assignment.evaluation_array);
+                    });
+                
+                    var resultHtml = '';
+                    
+                    for (var i = 0; i < sentencesArray.length; i++) {
+                        var sentenceErrorType = sentencesArray[i].sentenceErrorType;
+                        var sentenceText = sentencesArray[i].sentenceText;
+                        var sentenceAI = sentencesArray[i].sentenceAI;
+                        var sentenceAssessment = sentencesArray[i].sentenceAssessment;
+                        var summarizerName = sentencesArray[i].summarizerName;
+                        var sentenceIndex = sentencesArray[i].sentenceIndex;
+                        var evaluationText = sentencesArray[i].evaluationText;
+                        var contextText = sentencesArray.map(function(item) {
+                            if (item.sentenceText === sentenceText) {
+                                return '<span style="background-color: yellow;text-decoration: underline;">' + item.sentenceText + '</span>';
+                            } else {
+                                return item.sentenceText;
+                            }
+                        }).join(' ');
+                        
+                        var noiseIndexes = []; 
+                
+                        resultHtml += '<fieldset id="survey-' + (i + 1) + '" class="surveyItem">'
+                            + '<p style = "font-size: 22px;"><strong>' + ' Summary sentence ' + sentenceIndex + '</strong></p>'
+                            + '<div class="example-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">'
+                            + '<p>' + contextText + '</p>'
+                            + '</div>'
+                            + '<br>'
+                            + '<div class="evlaution-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">'
+                            + '<p>' + evaluationText + '</p>'
+                            + '</div>'
+                            + '<p style = "font-size: 16px;"><strong>Do you think the AI model’s decision is accurate?</strong></p>'
+                            + '<div class="radio" id="radioGroup-AI" style="display: block;">'
+                            + sentenceAI + 'type="radio" class="AI_radio_' + (i+1) + '" value="True" required/><span><p><strong>Yes</strong></p></span>' 
+                            + sentenceAI + 'type="radio" class="AI_radio_' + (i+1) + '" value="False" required/><span><p><strong>No</strong></p></span>'
+                             +'</label>'
+                            + '</div>'
+                            + '<br>'
+                            + '<div style="display: none;" id="Assessment_Radio_Group' + (i+1) + '">'
+                            + '<p style = "font-size: 16px;"><strong>Then, what is your assessment on the correctness of the information in the Summary Sentence?</strong></p>'
+                            + '<div class="radio" id="radioGroup-Assessment" style="display: block;">'
+                            + sentenceAssessment + 'type="radio" class="Assessment_radio_' + (i+1) + '" value="True"/><span><p>The information in the Summary Sentence is <strong>CORRECT</strong></p></span>' 
+                            + sentenceAssessment + 'type="radio" class="Assessment_radio_' + (i+1) + '" value="False"/><span><p>The information in the Summary Sentence is <strong>INCORRECT</strong></p></span>'
+                             +'</label>'
+                            + '</div>'
+                            + '</div>'
+                            + '<br>'
+                            + '<div style="display: none;" id="factualCheckboxes_Group' + (i+1) + '">'
+                            + '<p style = "font-size: 16px;"><strong>Please identify the type(s) of error present in the Summary Sentence. You may choose multiple errors.</strong></p>'
+                            + '<div class="checkbox">'
+                            + sentenceErrorType + 'type="checkbox" class="factualCheckbox_' + (i+1) + '" value="OutE" /><span><p><strong>Information not in the Reference Article:</strong> This error occurs when a Summary Sentence introduces facts, subjective opinions, or new information not found in or verifiable by the Reference Article.</p></span>'
+                            + sentenceErrorType + 'type="checkbox" class="factualCheckbox_' + (i+1) + '" value="EntE" /><span><p><strong>Entity error:</strong> This error occurs when there is an incorrect reference to a key subject or object in a Summary Sentence, such as using a wrong name, number, or pronoun.</p></span>'
+                            + sentenceErrorType + 'type="checkbox" class="factualCheckbox_' + (i+1) + '" value="RelE" /><span><p><strong>Relation error:</strong> This error occurs when there is a mistake in semantic relationships within a Summary Sentence, including but not limited to incorrect use of verbs, prepositions, and adjectives.</p></span>'
+                            + sentenceErrorType + 'type="checkbox" class="factualCheckbox_' + (i+1) + '" value="SenE" /><span><p><strong>Sentence error:</strong> This error occurs when an entire Summary Sentence contradicts the information provided in the Reference Article.</p></span>'
+                            + '</div>'
+                            + '</div>'
+                            resultHtml += '<div style="text-align: center;">';
+                            if (i > 0) {
+                                resultHtml += '<button type="button" onclick="goToPrevious(' + i + ')" class="button-style" style="margin-right: 10px;">Previous</button>';
+                            }
+                            if (i < sentencesArray.length - 1) {
+                                resultHtml += '<button type="button" onclick="goToNext(' + (i + 2) + ')" class="button-style">Next</button>';
+                            }
+                            
+                            resultHtml += '</div><br><hr><br></fieldset>';
+                        }
+    
+                    
+                     document.getElementById('sentence_container').innerHTML = resultHtml;
+                     function toggleFactualCheckboxes() {
+                        var aiRadios = document.querySelectorAll('[class^="AI_radio_"]'); 
+                    
+                        aiRadios.forEach(function(radio) {
+                            var index = radio.className.split('_')[2]; 
+                            radio.addEventListener('change', function() {
+                                var assessmentRadioGroup = document.getElementById('Assessment_Radio_Group' + index);
+                                var factualCheckboxesGroup = document.getElementById('factualCheckboxes_Group' + index);
+                    
+                                if (this.value === 'False' && this.checked) {
+                                    assessmentRadioGroup.style.display = 'block';
+                                    let assessmentRadios = assessmentRadioGroup.querySelectorAll('[class^="Assessment_radio_"]');
+                                    assessmentRadios.forEach(function(ar) {
+                                        ar.addEventListener('change', function() {
+                                            if (this.value === 'False' && this.checked) {
+                                                factualCheckboxesGroup.style.display = 'block';
+                                            } else if (this.value === 'True' && this.checked) {
+                                                factualCheckboxesGroup.style.display = 'none';
+                                            }
+                                        });
+                                    });
+                                } else if (this.value === 'True' && this.checked) {
+                                    assessmentRadioGroup.style.display = 'none';
+                                    factualCheckboxesGroup.style.display = 'none';
+                                }
+                            });
+                        });
+                    }
+                    
+                    toggleFactualCheckboxes();
+
+                    var highlight_sentence = highlight_list[0]
+                    var originalInnerHTML = document.getElementById('input_context').innerHTML;
+                    
+                    function updateAndAddLineNumbers(index, textelement) {
+                        highlight_sentence = [];
+                        if (index >= 0 && index <= highlight_list.length) {
+                            highlight_sentence = highlight_list[index-1];
+                        }
+                        
+                        var input_type = '${input_type}'
+                        var lines = textelement.split('<br><br>').filter(Boolean);
+                        var numberedLines = '<p style="text-align: center;"><strong style="font-size: 15px;">Text type : ' + input_type + ' & ${domain}</strong></p>' + '<ol class="sentence-list">';
+                        var speakerPattern = /(.+?)\(Speaker\) :/;
+                
+                        for (var i = 0; i < lines.length; i++) {
+                            var line = lines[i];
+                            var match = line.match(speakerPattern);
+
+                            if (input_type === 'dialogue') {
+                                    var listItem = '<li class = "dialogue"'; // 수정된 부분
+                                } else {
+                                    var listItem = '<li'; // 기존 코드
+                                }
+                    
+                            if (highlight_sentence.includes(i)) {
+                                listItem += ' style="text-decoration: underline"';
+                            }
+                    
+                            listItem += '>';
+                    
+                            if (match) {
+                                numberedLines += listItem + match[0].replace("(Speaker)", "") + ' ' + line.slice(match[0].length) + '</li>'; // 수정된 부분
+                            } else {
+                                numberedLines += listItem + line + '</li>'; // 수정된 부분
+                            }
+                        }
+                        numberedLines += '</ol>';
+                        document.getElementById('input_context').innerHTML = numberedLines;
+                    
+                    }
+                    
+                    updateAndAddLineNumbers(1, originalInnerHTML); 
+                    
+                    // Updated functions for Previous and Next buttons
+                    function goToPrevious(index) {
+                        updateAndAddLineNumbers(index, originalInnerHTML); 
+                        hideAllFieldsets();
+                        var prevFieldset = document.getElementById('survey-' + index);
+                        if (prevFieldset) {
+                            prevFieldset.style.display = 'block';
+                        }
+                    }
+                    
+                    function goToNext(index) {
+                        updateAndAddLineNumbers(index, originalInnerHTML); 
+                        hideAllFieldsets();
+                        var nextFieldset = document.getElementById('survey-' + index);
+                        if (nextFieldset) {
+                            nextFieldset.style.display = 'block';
+                        }
+                    }
+                    
+
+                    // Function to hide all fieldsets
+                    function hideAllFieldsets() {
+                        var fieldsets = document.getElementsByClassName('surveyItem');
+                        for (var i = 0; i < fieldsets.length; i++) {
+                            fieldsets[i].style.display = 'none';
+                        }
+                    }
+                    
+                    // Initialization function to hide all fieldsets and show the first one
+                    function initializeFieldsets() {
+                        hideAllFieldsets();
+                        if (sentencesArray.length > 0) {
+                            document.getElementById('survey-1').style.display = 'block';
+                        }
+                    }
+                    
+                    // Call initializeFieldsets when the page loads
+                    document.addEventListener('DOMContentLoaded', initializeFieldsets);
+                
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var fieldsets = document.querySelectorAll('fieldset.surveyItem');
+                        var submitButton = document.getElementById('submitButton');
+                        var incompleteDiv = document.getElementById('incompleteFieldsets');
+                        var progressBar = document.getElementById('progressBar');
+                    
+                        function updateProgress(incompleteCount) {
+                            var totalFieldsets = fieldsets.length;
+                            var completeCount = totalFieldsets - incompleteCount;
+                            var progressPercentage = (completeCount / totalFieldsets) * 100;
+                            progressBar.style.width = progressPercentage + '%';
+                        
+                            // Update the progress percentage text
+                            var progressPercentageText = document.getElementById('progressPercentage');
+                            progressPercentageText.textContent = progressPercentage.toFixed(0) + '%'; // Rounds to nearest whole number
+                        }
+                    
+                        function updateIncompleteFieldsets() {
+                            var incompleteFieldsetsNumbers = [];
+                            
+                            fieldsets.forEach((fieldset, index) => {
+                                var checkboxes = fieldset.querySelectorAll('input[type="checkbox"]');
+                                // var AIradios = fieldset.querySelectorAll('input[type="radio"].AI_radio');
+                                // var Assessmentradios = fieldset.querySelectorAll('input[type="radio"].Assessment_radio');
+                                var AIradios = fieldset.querySelectorAll('[class^="AI_radio_"]'); // Selects all classes that start with AI_radio_
+                                var Assessmentradios = fieldset.querySelectorAll('[class^="Assessment_radio_"]'); // Selects all classes that start with AI_radio_
+                                var isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                                var isTrueAIRadioChecked = Array.from(AIradios).some(radio => radio.checked && radio.value === 'True');
+                                var isFalseAIRadioChecked = Array.from(AIradios).some(radio => radio.checked && radio.value === 'False');
+                                var isTrueAssessmentRadioChecked = Array.from(Assessmentradios).some(radio => radio.checked && radio.value === 'True');
+                                var isFalseAssessmentRadioChecked = Array.from(Assessmentradios).some(radio => radio.checked && radio.value === 'False');
+                                
+                                var isComplete = isTrueAIRadioChecked || 
+                                                 (isFalseAIRadioChecked && isTrueAssessmentRadioChecked) ||
+                                                 (isFalseAIRadioChecked && isFalseAssessmentRadioChecked && isChecked);
+                    
+                                if (!isComplete) {
+                                    incompleteFieldsetsNumbers.push(index + 1);
+                                }
+                            });
+                    
+                            if (incompleteFieldsetsNumbers.length > 0) {
+                                incompleteDiv.innerHTML = '<strong><div class="incomplete-style">Incomplete Question</div> ' + incompleteFieldsetsNumbers.join(', ') + '</strong>';
+                                submitButton.disabled = true;
+                            } else {
+                                incompleteDiv.innerHTML = '<strong><div class="incomplete-style">All Questions Completed</div>';
+                                submitButton.disabled = false;
+                            }
+                    
+                            updateProgress(incompleteFieldsetsNumbers.length);
+                        }
+                    
+                        fieldsets.forEach(fieldset => {
+                            fieldset.addEventListener('change', updateIncompleteFieldsets);
+                        });
+                    
+                        updateIncompleteFieldsets(); 
+                    });
+                    
+                
+                </script>
+
+        
+                </div>
+        
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    </div>
+
+
+
+</section>
+
+
+
+
+
+<style type="text/css">
+    #instructions {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    
+    .panel-body p, .panel-body li {
+        line-height: 1.6; /* Adjust this value as needed */
+    }
+    
+    #sentence_container {
+        height: 100%;
+        max-height: 2000px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    #document-content {
+        height: 100%;
+        max-height: 2000px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    
+
+    #line-number {
+        color: red;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+        font-weight: bold;
+    }
+    
+    ol.sentence-list {
+        list-style-type: none; 
+        counter-reset: list-counter;
+        padding-left: 0; 
+    }
+    ol.sentence-list li {
+        counter-increment: list-counter; 
+        display: flex; 
+        align-items: baseline; 
+        margin-bottom: 10px; 
+    }
+    
+    ol.sentence-list li::before {
+        content: "#"counter(list-counter) " "; 
+        margin-right: 5px; 
+        font-weight: bold; 
+    }
+    
+    ol.sentence-list li.dialogue {
+    counter-increment: list-counter; 
+    display: flex; 
+    align-items: baseline; 
+    margin-bottom: 10px; 
+    }
+    
+    ol.sentence-list li.dialogue::before {
+        content: "" " "; 
+        margin-right: 0px; 
+    }
+    
+    .surveyItem p {
+        margin: 5px 0; 
+    }
+
+    .checkbox p {
+        margin: 5px 0; 
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .input-margin {
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+    
+    .incomplete-style {
+    font-size: 15px; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f59d48;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#f8b95d), to(#f59e49));
+    background-image: -moz-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -ms-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8b95d), color-stop(100%, #f59e49));
+    background-image: -webkit-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -o-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: linear-gradient(to bottom, #f8b95d, #f59e49);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8b95d', endColorstr='#f59e49', GradientType=0);
+    border-color: #f59d48;
+    border-color: rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.25);
+    text-align: center;
+    }
+    
+    .button-style {
+    width: 100px;
+    font-size: 15px; 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f59d48;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#f8b95d), to(#f59e49));
+    background-image: -moz-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -ms-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8b95d), color-stop(100%, #f59e49));
+    background-image: -webkit-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: -o-linear-gradient(top, #f8b95d, #f59e49);
+    background-image: linear-gradient(to bottom, #f8b95d, #f59e49);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8b95d', endColorstr='#f59e49', GradientType=0);
+    border-color: #f59d48;
+    border-color: rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.25);
+    text-align: center;
+    }
+
+.highlight {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: #2abaf7;
+    transition: width 0.4s ease-in-out;
+}
+
+</style>

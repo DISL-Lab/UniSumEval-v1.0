@@ -1,0 +1,10 @@
+Is the summary sentence supported by the document? Response with "Yes" or "No" for each sentence in the summary.
+
+Provide your answer in JSON format. The answer should be a list of dictionaries whose keys are "sentence" and "response":
+[{"sentence": "first sentence", "response": "yes or no"}, {"sentence": "second sentence", "response": "yes or no"},{"sentence": "third sentence", "response": "yes or no"},]
+
+Document:
+{input text}
+
+Summary with N sentences:
+{summary sentences}

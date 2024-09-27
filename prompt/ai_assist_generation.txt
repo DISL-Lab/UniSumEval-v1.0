@@ -1,0 +1,19 @@
+You will receive an article followed by a corresponding summary. Your task is to assess the factuality of each summary sentence across nine categories:
+* out-of-article error: this error occurs when a summary statement introduces facts, subjective opinions, or new information not found in or verifiable by the article.
+* entity error: this error occurs when there is an incorrect reference to a key subject or object in a summary statement, such as using a wrong name, number, or pronoun. * relation error: this error occurs when there is a mistake in semantic relationships within a summary statement, including but not limited to incorrect use of verbs, prepositions, and adjectives.
+* sentence error: this error occurs when an entire summary statement contradicts the information provided in the article.
+* no error: the summary statement aligns explicitly with the content of the article and is factually consistent with it.
+
+Instruction:
+First, compare each summary sentence with the article.
+Second, provide a single sentence explaining which factuality error the sentence has. Third, answer the classified error category for each sentence in the summary.
+Please do not change the order of sentences in your answer.
+
+Provide your answer in JSON format. The answer should be a list of dictionaries whose keys are "sentence", "reason", and "category":
+[{"sentence": "first sentence", "reason": "your reason", "category": "no error"}, {"sentence": "second sentence", "reason": "your reason", "category": "out-of-article error"}, {"sentence": "third sentence", "reason": "your reason", "category": "entity error"},]
+
+Article:
+{input text}
+
+Summary with N sentences:
+{summary sentences}

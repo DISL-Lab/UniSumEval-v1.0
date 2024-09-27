@@ -1,0 +1,304 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+
+<section class="container">
+
+    <div class="row col-xs-12 col-md-12">
+    <!-- Instructions -->
+        <div class="col-md-6">
+            <section class="container" id="instruction" style="font-family: Verdana, Geneva, sans-serif; color: #333333">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><strong>Instructions</strong></div>
+            
+                    <div class="panel-body">
+                        <div class="example-content" style="padding: 3px; margin-left: 2px; margin-right: 2px;">
+                            <strong style="font-size: 20px;">INSTRUCTION</strong>
+                            <p style="margin: 5px 0;">You will be provided with an article named [DISL_***], along with a set of statements.</p>
+                            <div class="example-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">'
+                                <p>Your job is to identify if the statments are useful for making a good summary of the article.</p>
+                            </div>
+                            <p style="margin: 5px 0;">Please follow the STEPS below.</p>
+                        </div>
+                                    
+                        <!-- Example -->
+            
+                         <div class="example-content" style = "border: 1px solid #ccc; padding: 3px; margin-left: 2px; margin-right: 2px;">
+                            <strong style="font-size: 20px;">STEPS </strong>
+                                <ol>
+                                    <li style="margin: 5px 0";> Read the article carefully.</li>
+                                    <li style="margin: 5px 0";> 
+                                        If a statement is useful for making a good summary of the article, please check the box "This statement is useful for making a good summary".<br>
+                                    </li>
+                                    <li style="margin: 5px 0";>If you think a statement is NOT useful for making a good summary of the article, please check the box “This statement is NOT useful for making a good summary".</li>
+                                    <p>There can be various reasons why a statement may not be useful for making a summary. For example, although a statement delivers correct information, it may be too trivial to be used for making a summary. A statement can also be not useful because its information does not match with the article (numbers, names, etc) and/or uses information not given in the article.</p>
+                                    <li style="margin: 5px 0";>Repeat #2 and #3 for each statement.</li>
+                                </ol>
+                                
+                            <p><strong style="font-size: 20px;">NOTICE</strong><p>
+                                <ul>
+                                    <li style="margin: 5px 0";>There are various article types, including dialogues, news articles, medical articles, informative articles, meeting transcripts, and so on. </li>
+                                    <li style="margin: 5px 0";>Some articles might include grammatical errors as they are transcripts of real conversations. </li>
+                                    <li style="margin: 5px 0";>We have numbered every sentence of an article (#1, #2, #3…) to improve readability.</li>
+                                    <li style="margin: 5px 0";><strong style = "color: red;">IMPORTANT</strong>
+                                        <ul>
+                                            <li>
+                                                To ensure the faithfulness of your work, each HIT intentionally includes at least one irrelevant statement referred to as a TRICK statement. <br>
+                                                TRICK statements are completely useless for crafting a summary of the article and therefore should be easily identifiable.<br>
+                                                <strong>Failure to select “This statement is NOT useful for making a good summary” for TRICK statements will result in the rejection or your work.</strong>
+                                            </li>
+                                            <li>
+                                                Each statement has been <strong>preselected for its high likelihood of being useful for making a good summary. </strong>
+                                                Therefore, only a small number of statements are expected to be not useful for crafting a summary. 
+                                                If an excessive number of statements are identified as “Not useful”, a detailed manual review will be conducted, which may result in the rejection of your submission.
+                                            </li>
+                                        </ul>
+                                    </strong>
+                                    </li>
+                                </ul>
+                                
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                
+            </section>
+            
+        </div>  
+    </div>
+    
+    <div class="row col-xs-12 col-md-12">
+        <!-- End Instructions -->
+        <div class="col-md-6">
+        <!-- Content Body -->
+            <section class="container" id = "layout" style="margin-bottom: 15px; font-family: Verdana, Geneva, sans-serif; color: #333333; font-size: 1.0em;">
+        
+                <div class="container-head">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="col-6">
+                            <p id="Document">Article <strong>${uid}</strong></p>
+                        </div>
+                      
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p id="Key-fact-list"><strong>Statement List</strong></p>
+                    </div>
+                </div>
+                
+                <div class="container-body">
+                    <!-- Text Column -->
+                    <div class="col-xs-12 col-md-6">
+                      <div id="document-content">
+                        <p id="input_context">${input_context}</p>
+                      </div>
+                    </div>
+        
+                    <!-- Fieldset Column -->
+                    <div class="col-xs-12 col-md-6">
+                        <!-- Group for key facts 1-8 -->
+                        <div id="key_fact_container">
+                            <fieldset id="key-fact-1" class="surveyItem">
+                                <div class="example-content" style = "display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">
+                                    <p><strong>Statement 1 :</strong>${key_fact_1}</p>   
+                                </div>
+                    
+                                <div class="radio" id="key-fact-1-second-survey" style="display: block;">
+                                    <input name="key_fact_1_resaon" type="radio" value="True"/><span><p>Yes. This statement is useful for making a good summary of the article.</p></span>
+                                </div>
+                                <div class="radio" id="key-fact-1-second-survey" style="display: block;">
+                                    <input name="key_fact_1_resaon" type="radio" value="False"/><span><p>This key fact is WRONG: Although it delivers correct information, it is too trivial to be used for crafting a good summary.</p></span>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            
+                <script type="text/javascript">
+                    var keyFacts = [
+                        "${key_fact_1}", 
+                        "${key_fact_2}", 
+                        "${key_fact_3}", 
+                        "${key_fact_4}", 
+                        "${key_fact_5}", 
+                        "${key_fact_6}", 
+                        "${key_fact_7}", 
+                        "${key_fact_8}", 
+                        "${key_fact_9}", 
+                        "${key_fact_10}", 
+                        "${key_fact_11}", 
+                        "${key_fact_12}", 
+                        "${key_fact_13}", 
+                        "${key_fact_14}", 
+                        "${key_fact_15}", 
+                        "${key_fact_16}", 
+                        "${key_fact_17}", 
+                        "${key_fact_18}", 
+                        "${key_fact_19}", 
+                        "${key_fact_20}"
+                    ];
+                    
+                    function removeBlankElements() {
+                        for (var i = keyFacts.length - 1; i >= 0; i--) {
+                            if (keyFacts[i] === "BLANK" || keyFacts[i] === "") {
+                                keyFacts.splice(i, 1);
+                            }
+                        }
+                    }
+                    
+                    removeBlankElements();
+                    
+                   var keyFactsArray = [];
+
+                    for (var i = 0; i < keyFacts.length; i++) {
+                        var keyFactName = '<input name="key_fact_' + (i + 1) + '_reason" ';
+                        var keyValue = i + 1;
+                        var keyFactObject = {};
+                        keyFactObject[keyValue] = {
+                            keyFactName: keyFactName, 
+                            keyFactText: keyFacts[i] 
+                        };
+                        keyFactsArray.push(keyFactObject);
+                    }
+                    
+                    var noiseKeyFactName = '<input name="noise_keyfact" ';
+                    
+                    var noiseKeyFactText = "${noise_key_fact}";
+                    
+                    var noiseKey = Object.keys(keyFactsArray).length + 1;
+                    var noiseKeyFactObject = {};
+                    noiseKeyFactObject[noiseKey] = {
+                        keyFactName: noiseKeyFactName,
+                        keyFactText: noiseKeyFactText
+                    };
+                    
+                    var insertIndex = Math.floor(Math.random() * (keyFactsArray.length + 1));; 
+                    
+                    keyFactsArray.splice(insertIndex, 0, noiseKeyFactObject);
+                    
+                    for (var i = 0; i < keyFactsArray.length; i++) {
+                        var key = Object.keys(keyFactsArray[i])[0];
+                        keyFactsArray[i] = keyFactsArray[i][key];
+                    }
+
+                    var resultHtml = '';
+                    
+                    for (var i = 0; i < keyFactsArray.length; i++) {
+                        var keyFactName = keyFactsArray[i].keyFactName; 
+                        var keyFactText = keyFactsArray[i].keyFactText; 
+                        
+                        resultHtml += '<fieldset id="key-fact-' + (i + 1) + '" class="surveyItem">'
+                                    + '<div class="example-content" style="display: flex; width: 100%; border-radius: 4px; background: #f1f1ef; padding: 16px 16px 16px 12px;">'
+                                    + '<p><strong>Statement ' + (i + 1) + ' : </strong>'  + keyFactText + '</p>'
+                                    + '</div>'
+                                    + '<p><strong>Q. Is this statement useful for making a good summary of the article?</strong></p>'
+                                    + '<div class="radio" id="key-fact-' + (i + 1) + '-second-survey" style="display: block;">'
+                                    + keyFactName + 'type="radio" value="True" required/><span><p>Yes. This statement is useful for making a good summary of the article.</p></span>'
+                                    + keyFactName + 'type="radio" value="False" required/><span><p>No, This statemnet is NOT useful for making a good summary of the article (Not important, irrelvant to the article, does not match with the article, etc.)</p></span>'
+                                    + '</div>'
+                                    + '</fieldset><br><hr><br>';
+                    }
+                    
+                    document.getElementById('key_fact_container').innerHTML = resultHtml;
+                    
+                
+                      function addLineNumbers(elementId) {
+                        var textElement = document.getElementById(elementId);
+                        var lines = textElement.innerHTML.split('<br><br>').filter(Boolean);
+                        var numberedLines = '<p style="text-align: center;"><strong style="font-size: 15px;">Text type : ${input_type} & ${domain}</strong></p>' + '<ol class="sentence-list">';
+                        
+                        var speakerPattern = /(.+?)\(Speaker\) :/; 
+                        
+                        for (var i = 0; i < lines.length; i++) {
+                            var line = lines[i];
+                            var match = line.match(speakerPattern);
+                            if (match) {
+                                numberedLines += '<p class="no-line-number"><strong>' + match[0] + '</strong></p>';
+                                numberedLines += '<li>' + line.slice(match[0].length) + '</li>';
+                            } else {
+                                numberedLines += '<li>' + line + '</li>';
+                            }
+                        }
+                        
+                        numberedLines += '</ol>';
+                        textElement.innerHTML = numberedLines;
+                    }
+                    
+                addLineNumbers('input_context');
+                </script>
+        
+                </div>
+        
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    </div>
+    
+</section>
+
+<style type="text/css">
+    #instructions {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    
+
+    #key_fact_container {
+        height: 100%;
+        max-height: 1500px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    #document-content {
+        height: 100%;
+        max-height: 1500px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    #line-number {
+        color: red;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+        font-weight: bold;
+    }
+    
+    ol.sentence-list {
+        list-style-type: none; 
+        counter-reset: list-counter;
+        padding-left: 0; 
+    }
+    ol.sentence-list li {
+        counter-increment: list-counter; 
+        display: flex; 
+        align-items: baseline; 
+        margin-bottom: 10px; 
+    }
+    ol.sentence-list li::before {
+        content: "#"counter(list-counter) " "; 
+        margin-right: 5px; 
+        font-weight: bold; 
+    }
+    
+    .surveyItem p {
+        margin: 5px 0; 
+    }
+
+    .checkbox p {
+        margin: 5px 0; 
+    }
+
+    .checkbox input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .input-margin {
+        margin-top: 5px; 
+        margin-bottom: 5px; 
+    }
+
+</style>
