@@ -10,7 +10,7 @@ Towards Unified, Fine-Grained, Multi-Dimensional Summarization Evaluation for LL
 
 
 <div align="center">
-  <p>Authors: Yuho Lee, Taewon Yun, Hwanjun Song</p>
+  <p>Authors: Yuho Lee, Taewon Yun, Jason Cai, Hang Su, Hwanjun Song</p>
   <a href="https://arxiv.org/abs/1234.56789">
   <img src="https://img.shields.io/badge/arXiv-b31b1b?style=flat-square" alt="arXiv">
   </a>
