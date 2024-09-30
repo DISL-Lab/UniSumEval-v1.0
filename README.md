@@ -123,8 +123,8 @@ python reproduce/evaluators_benchmark.py --input_path data/unisumeval_faithfulne
 
 Please consider citation if our paper is useful in your research.
 ```BibTeX
-@inproceedings{song2023enhancing,
-  title={Enhancing Abstractiveness of Summarization Models through Calibrated Distillation},
+@inproceedings{lee2024unisumeval,
+  title={UniSumEval: Towards Unified, Fine-Grained, Multi-Dimensional Summarization Evaluation for LLMs},
   author={Lee, Yuho and Yun, Taewon and Cai, Jason and Su, Hang and Song, Hwanjun},
   booktitle={Findings of the Association for Computational Linguistics: EMNLP 2024},
   year={2023}
