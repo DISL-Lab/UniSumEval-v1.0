@@ -123,7 +123,12 @@ python reproduce/evaluators_benchmark.py --input_path data/unisumeval_faithfulne
 
 Please consider citation if our paper is useful in your research.
 ```BibTeX
-TBD
+@inproceedings{song2023enhancing,
+  title={Enhancing Abstractiveness of Summarization Models through Calibrated Distillation},
+  author={Lee, Yuho and Yun, Taewon and Cai, Jason and Su, Hang and Song, Hwanjun},
+  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2024},
+  year={2023}
+}
 ```
 
 # 🤗 Acknowledgement
