@@ -127,7 +127,7 @@ Please consider citation if our paper is useful in your research.
   title={UniSumEval: Towards Unified, Fine-Grained, Multi-Dimensional Summarization Evaluation for LLMs},
   author={Lee, Yuho and Yun, Taewon and Cai, Jason and Su, Hang and Song, Hwanjun},
   booktitle={Findings of the Association for Computational Linguistics: EMNLP 2024},
-  year={2023}
+  year={2024}
 }
 ```
 
